@@ -1,0 +1,13 @@
+<h1>Mostrando Valores Dolar Ultimos 7 Dias</h1>
+
+<!-- Solo para darle algo de estilo -->
+<%= "#{'===' * 20}" %>
+<br><br>
+<!-- Recorremos el arreglo que ya habiamos formateado con los ultimos 7 dias -->
+<!-- Mostrando la informacion de forma mas legible para que se pueda utilizar y analizar-->
+<div>
+  <% @ultima_semana.each do |dia| %>
+    <!-- Para cada dato representando un dia, obtenemos lo que se guardo en la llave fecha y en la llave dia -->
+    <h3><b>Fecha:</b> <%= dia['fecha'].to_date %> <b>Valor:</b> <%= dia['valor'] %> </h3>
+  <% end %>
+</div>
