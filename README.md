@@ -12,8 +12,8 @@
     - last_4
     - brand
     - fingerprint
-    - expiration_year
-    - expiration_month
+    - expiry_year
+    - expiry_month
     - status
 
 * Product
@@ -27,8 +27,8 @@
     - total_price
     - user_id
     - purchase_date
-    - payment_status
-    - order_id
+    - status
+    - order_code
 
 * BillingDetail
     - user_id

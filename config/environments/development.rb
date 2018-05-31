@@ -8,7 +8,9 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-
+  config.generators do |g|
+    g.factory_girl dir: 'spec/factories'
+  end
 
   config.action_mailer.delivery_method = :sendmail
   # Defaults to:
@@ -16,10 +18,12 @@ Rails.application.configure do
   #   location: '/usr/sbin/sendmail',
   #   arguments: '-i'
   # }
+
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'no-reply@example.com'}
-  config.action_mailer.default_url_options = { host: "localhost:3000" }
+  # config.action_mailer.default_url_options = { host: "localhost:3000" }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Show full error reports.
   config.consider_all_requests_local = true
