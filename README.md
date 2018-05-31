@@ -1,10 +1,10 @@
 # Estructura DB
 
 * User
-    email
-    password
-    name
-    strip_customer_id
+    - email
+    - password
+    - name
+    - strip_customer_id
 
 * Card
     user_id
