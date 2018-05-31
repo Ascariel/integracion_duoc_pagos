@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get 'send_email_info' => 'pagos#send_email_info'
   get 'receive_get_params' => 'pagos#receive_get_params'
   get 'test_get_request' => 'pagos#test_get_request'
+  # get 'users/sign_out' => 'sessions#destroy'
 
 end
