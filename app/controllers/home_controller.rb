@@ -16,4 +16,8 @@ class HomeController < ApplicationController
     # En la vista divisas.html mostramos los datos rescatados
   end
 
+  def index
+
+  end
+
 end

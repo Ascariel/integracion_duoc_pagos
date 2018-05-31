@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_004654) do
+ActiveRecord::Schema.define(version: 2018_05_31_012045) do
 
   create_table "billing_details", force: :cascade do |t|
     t.integer "product_id"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2018_05_31_004654) do
     t.string "stripe_customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

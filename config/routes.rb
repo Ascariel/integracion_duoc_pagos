@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  root to: "home#index"
   get 'create_card' => 'pagos#create_card'
   get 'divisas' => 'home#divisas'
   get 'send_email_info' => 'pagos#send_email_info'

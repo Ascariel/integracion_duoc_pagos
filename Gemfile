@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.0'
 gem 'awesome_print'
+gem 'bootstrap', '~> 4.1.1'
 gem 'factory_girl_rails'
 gem 'faker'
 gem 'devise'
