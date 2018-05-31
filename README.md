@@ -1,24 +1,37 @@
-# README
+# Estructura DB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* User
+    email
+    password
+    name
+    strip_customer_id
 
-Things you may want to cover:
+* Card
+    user_id
+    stripe_card_id
+    last_4
+    brand
+    fingerprint
+    expiration_year
+    expiration_month
+    status
 
-* Ruby version
+* Product
+    description
+    name
+    category_id
+    image_url
+    price_dollars
 
-* System dependencies
+* Billing
+    total_price
+    user_id
+    purchase_date
+    payment_status
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* BillingDetail
+    user_id
+    product_id
+    total_price
+    unit_price
+    quantity
