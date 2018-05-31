@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   end
 
   def index
-
+    # flash[:success] = 'yey'
   end
 
 end
