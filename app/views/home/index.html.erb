@@ -1,263 +1,200 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[TITLE]</title>
+<!-- contendio home -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center main-header">
+				<img src="https://images.kojaro.com/2015/12/fast-food-maka.jpg">
 
+			</div>
+		</div>
 
+		<div class="row">
+			<div class="col-md-3">
+				<div class=" left-side-info">
 
-  <link rel="stylesheet" href="https://puntoticket-a.akamaihd.net/assets/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://puntoticket-a.akamaihd.net/assets/normalize/3.0.3/normalize.min.css">
-  <link href="https://puntoticket-a.akamaihd.net/especiales/nav/[PT-NAV-VERSION]/css/style.css" rel="stylesheet" type="text/css">
+				</div>
+			</div>
 
-  <style type="text/css">
-  body {
-    background-color: #fff;
-  }
+			<div class="col-md-9">
+				
+				<!-- papas fritas -->
+				<div class="row">
+					<div class="col-md-12 food-title">
+						<p>PAPAS FRITAS</p>
+					</div>
 
-  .container-a {
-    margin-top: 5%;
-    border: solid 2px #ccc;
-    min-height: 1000px;
-    padding-top: 20px;
-  }
+					<!-- combo 1 -->
+					<div class="col-md-4">
+						<div class="text-center food">
+							<%= image_tag("fries_1.jpg") %>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Cantidad</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
 
-  .main-header img{
-    width: 100%;
-  }
+					<!-- combo 2 -->
+					<div class="col-md-4">
+						<div class="text-center food">
+							<%= image_tag("fries_2.jpg") %>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Cantidad</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
 
-  .food-main-tit {
-    margin-top: 20px;
-    background-color: #e96f01;
-    margin-bottom: 30px;
-  }
-  .food-tit {
-/*    color: #fff;
-    padding-top: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    border-left: solid 2px #5e2802;*/
+					<!-- combo 3 -->
+					<div class="col-md-4">
+						<div class="text-center food">
+							<%= image_tag("fries_3.jpg") %>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Cantidad</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+				</div>
 
-  }
+				<div class="space"></div>
+				
+				<!-- hamburguesas -->
+				<div class="row">
+					<div class="col-md-12 food-title">
+						<p>HAMBURGUESAS</p>
+					</div>
+					
+					<!-- combo 1 -->
+					<div class="col-md-4">
+						<div class="text-center food">
+							<%= image_tag("burger_1.jpg") %>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Cantidad</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
 
-  .food {
-    /*border: solid 1px #000;*/
-    min-height: 150px;
-  }
-  .food img {
-    max-width: 70%;
-  }
+					<!-- combo 2 -->
+					<div class="col-md-4">
+						<div class="text-center food">
+							<%= image_tag("burger_2.jpg") %>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Cantidad</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
 
-  .left-side-info {
-    border: solid 1px #000;
-    min-height: 800px;
-    margin: 20px 0 20px 20px;
-  }
-</style>
+					<!-- combo 3 -->
+					<div class="col-md-4">
+						<div class="text-center food">
+							<%= image_tag("burger_3.jpg") %>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Cantidad</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+				</div>
 
+				<div class="space"></div>
 
+				<!-- bebidas -->
+				<div class="row">
+					<div class="col-md-12 food-title">
+						<p>BEBIDAS</p>
+					</div>
+					<!-- combo 1 -->
+					<div class="col-md-4">
+						<div class="text-center food">
+							<%= image_tag("drink_1.jpg") %>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Cantidad</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
 
+					<!-- combo 2 -->
+					<div class="col-md-4">
+						<div class="text-center food">
+							<%= image_tag("drink_2.jpg") %>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Cantidad</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
 
-</head>
-<body>
+					<!-- combo 3 -->
+					<div class="col-md-4">
+						<div class="text-center food">
+							<%= image_tag("drink_3.jpg") %>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Cantidad</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+				</div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center main-header">
-        <img src="https://images.kojaro.com/2015/12/fast-food-maka.jpg">
+			</div>
 
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-3">
-        <div class=" left-side-info">
-
-        </div>
-      </div>
-
-      <div class="col-md-9">
-
-        <!-- papas fritas -->
-        <div class="row">
-          <div class="col-md-12 food-tit">
-            <p>PAPAS FRITAS</p>
-          </div>
-
-          <!-- combo 1 -->
-          <div class="col-md-4 food">
-            <div class="text-center">
-              <img src="https://www.wendys.cl/wp-content/uploads/2016/05/papas-fritas-643x378.png">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- combo 2 -->
-          <div class="col-md-4 food">
-            <div class="text-center">
-              <img src="https://www.wendys.cl/wp-content/uploads/2016/05/papas-fritas-643x378.png">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- combo 3 -->
-          <div class="col-md-4 food">
-            <div class="text-center">
-              <img src="https://www.wendys.cl/wp-content/uploads/2016/05/papas-fritas-643x378.png">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- hamburguesas -->
-        <div class="row">
-          <div class="col-md-12 food-tit">
-            <p>HAMBURGUESAS</p>
-          </div>
-
-          <!-- combo 1 -->
-          <div class="col-md-4 food">
-            <div class="text-center">
-              <img src="http://www.bembos.com.pe/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/l/clasica.png.png">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- combo 2 -->
-          <div class="col-md-4 food">
-            <div class="text-center">
-              <img src="http://www.bembos.com.pe/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/l/clasica.png.png">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- combo 3 -->
-          <div class="col-md-4 food">
-            <div class="text-center">
-              <img src="http://www.bembos.com.pe/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/l/clasica.png.png">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- bebidas -->
-        <div class="row">
-          <div class="col-md-12 food-tit">
-            <p>BEBIDAS</p>
-          </div>
-          <!-- combo 1 -->
-          <div class="col-md-4 food">
-            <div class="text-center">
-              <img src="http://images.lider.cl/wmtcl?source=url[file:/productos/3895a.jpg]&sink">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- combo 2 -->
-          <div class="col-md-4 food">
-            <div class="text-center">
-              <img src="https://www.ketal.com.bo/12820-large_default/gaseosa-fanta-naranja-25lt.jpg">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- combo 3 -->
-          <div class="col-md-4 food">
-            <div class="text-center">
-              <img src="https://www.hi5mart.com/image/cache/catalog/DRINKS%20AND%20BEVERAGES/sprite/sprite%201.5l-750x750.jpg">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-
-</body>
-</html>
+		</div>
+	</div>
