@@ -16,6 +16,10 @@
     - expiry_month
     - status
 
+* Category
+    name
+    description
+
 * Product
     - description
     - name
@@ -31,7 +35,7 @@
     - order_code
 
 * BillingDetail
-    - user_id
+    - billing_id
     - product_id
     - total_price
     - unit_price
