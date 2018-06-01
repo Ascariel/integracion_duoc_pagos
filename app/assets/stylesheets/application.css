@@ -5,8 +5,13 @@
 	padding-top: 20px;
 }
 
-.main-header img{
-	width: 100%;
+.main-header {
+	margin-top: 7%;
+	background: #fff url('fast-food-header.jpg') no-repeat center top;
+}
+
+.logo-header {
+	max-width: 40%;
 }
 
 .food-main-title {
@@ -15,17 +20,11 @@
 	margin-bottom: 30px;
 }
 
-.food-title {
-	font-size: 25px;
-	font-weight: bold;
-	letter-spacing: -0.95px;
-	color: #ff8d07;
-}
 .food {
-	min-height: 150px;
+	text-align: center;
 }
 .food img {
-	max-width: 70%;
+	max-width: 35%;
 }
 
 .left-side-info {
@@ -33,3 +32,9 @@
 	min-height: 800px;
 	margin: 20px 0 20px 20px;
 }
+
+.category-name {
+	padding: 2px 0;
+}
+
+
