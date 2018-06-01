@@ -4,6 +4,7 @@
     - email
     - password
     - name
+    - phone
     - strip_customer_id
 
 * Card
@@ -17,8 +18,8 @@
     - status
 
 * Category
-    name
-    description
+    - name
+    - description
 
 * Product
     - description
@@ -31,7 +32,8 @@
     - total_price
     - user_id
     - purchase_date
-    - status
+    - payment_status
+    - status [failed, pending, paid, delivered]
     - order_code
 
 * BillingDetail
