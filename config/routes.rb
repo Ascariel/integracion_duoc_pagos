@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get 'receive_get_params' => 'pagos#receive_get_params'
   get 'test_get_request' => 'pagos#test_get_request'
   get 'users/sign_out' => 'devise/sessions#destroy'
+  get 'test_post_request' => 'pagos#test_post_request'
 
 end

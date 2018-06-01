@@ -16,17 +16,51 @@
 			</div>
 
 			<div class="col-md-9">
-				
-				<!-- papas fritas -->
-				<div class="row">
+
+				<!-- ============= INICIO PARTE PABLO ====== -->
+				<br>
+				<% Category.all.each do |category| %>
+					<div class="row">
+						<div class="col-md-12 food-title">
+							<p><%= category.name.upcase %></p>
+						</div>
+
+						<% category.products.first(3).each do |product| %>
+
+							<div class="col-md-4">
+								<div class="text-center food">
+									<%= image_tag(product.image_url) %>
+								</div>
+								<div class="form-group">
+									<label for="exampleFormControlSelect1">Cantidad</label>
+									<select class="form-control" id="exampleFormControlSelect1">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+								</div>
+							</div>
+						<% end %>
+						<div class="space"></div>
+					</div>
+				<% end %>
+			</div>
+				<!-- ============= FIN PARTE PABLO ====== -->
+
+
+				<!-- ============= INICIO PARTE ANDREA ====== -->
+
+<!-- 				<div class="row">
 					<div class="col-md-12 food-title">
 						<p>PAPAS FRITAS</p>
 					</div>
 
-					<!-- combo 1 -->
+
 					<div class="col-md-4">
 						<div class="text-center food">
-							<%= image_tag("fries_1.jpg") %>
+							<%#= image_tag(Product.first.image_url) %>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect1">Cantidad</label>
@@ -40,10 +74,11 @@
 						</div>
 					</div>
 
-					<!-- combo 2 -->
+
 					<div class="col-md-4">
 						<div class="text-center food">
 							<%= image_tag("fries_2.jpg") %>
+							<%#= image_tag(Product.second.image_url) %>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect1">Cantidad</label>
@@ -57,10 +92,9 @@
 						</div>
 					</div>
 
-					<!-- combo 3 -->
 					<div class="col-md-4">
 						<div class="text-center food">
-							<%= image_tag("fries_3.jpg") %>
+							<%#= image_tag(Product.third.image_url) %>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect1">Cantidad</label>
@@ -76,17 +110,15 @@
 				</div>
 
 				<div class="space"></div>
-				
-				<!-- hamburguesas -->
+
 				<div class="row">
 					<div class="col-md-12 food-title">
 						<p>HAMBURGUESAS</p>
 					</div>
-					
-					<!-- combo 1 -->
+
 					<div class="col-md-4">
 						<div class="text-center food">
-							<%= image_tag("burger_1.jpg") %>
+							<%#= image_tag(Product.fourth.image_url) %>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect1">Cantidad</label>
@@ -100,10 +132,9 @@
 						</div>
 					</div>
 
-					<!-- combo 2 -->
 					<div class="col-md-4">
 						<div class="text-center food">
-							<%= image_tag("burger_2.jpg") %>
+							<%#= image_tag(Product.fifth.image_url) %>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect1">Cantidad</label>
@@ -117,10 +148,9 @@
 						</div>
 					</div>
 
-					<!-- combo 3 -->
 					<div class="col-md-4">
 						<div class="text-center food">
-							<%= image_tag("burger_3.jpg") %>
+							<%#= image_tag(Product.first(6).last.image_url) %>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect1">Cantidad</label>
@@ -137,15 +167,13 @@
 
 				<div class="space"></div>
 
-				<!-- bebidas -->
 				<div class="row">
 					<div class="col-md-12 food-title">
 						<p>BEBIDAS</p>
 					</div>
-					<!-- combo 1 -->
 					<div class="col-md-4">
 						<div class="text-center food">
-							<%= image_tag("drink_1.jpg") %>
+							<%#= image_tag(Product.first(7).last.image_url) %>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect1">Cantidad</label>
@@ -159,10 +187,9 @@
 						</div>
 					</div>
 
-					<!-- combo 2 -->
 					<div class="col-md-4">
 						<div class="text-center food">
-							<%= image_tag("drink_2.jpg") %>
+							<%#= image_tag(Product.first(8).last.image_url) %>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect1">Cantidad</label>
@@ -176,10 +203,9 @@
 						</div>
 					</div>
 
-					<!-- combo 3 -->
 					<div class="col-md-4">
 						<div class="text-center food">
-							<%= image_tag("drink_3.jpg") %>
+							<%#= image_tag(Product.first(9).last.image_url) %>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect1">Cantidad</label>
@@ -192,9 +218,9 @@
 							</select>
 						</div>
 					</div>
-				</div>
-
-			</div>
+				</div> -->
+			<!-- ============= FIN PARTE ANDREA ====== -->
 
 		</div>
 	</div>
+<br><br><br>

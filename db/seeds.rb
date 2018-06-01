@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+ # db:seed command (or created alongside the database with db:setup).
+
+
+
+cat_papas = Category.find_or_create_by(name: 'Papas Fritas', description: '')
+cat_hamburguesas = Category.find_or_create_by(name: 'Hamburguesas', description: '')
+cat_bebidas = Category.find_or_create_by(name: 'Bebidas', description: '')
+
+Product.find_or_create_by!(name: 'Papas Fritas XL', price_dollars: '6', description: 'Rica porcion de papas', image_url: '/assets/fries_1.jpg', category: cat_papas)
+Product.find_or_create_by!(name: 'Papas Fritas Mediana', price_dollars: '4', description: 'Rica porcion de papas', image_url: '/assets/fries_2.jpg', category: cat_papas)
+Product.find_or_create_by!(name: 'Papas Fritas Chicas', price_dollars: '2', description: 'Rica porcion de papas', image_url: '/assets/fries_3.jpg', category: cat_papas)
+
+Product.find_or_create_by!(name: 'Hamburguesa Clasica', price_dollars: '8', description: 'Clasica hamburguesa!', image_url: '/assets/burger_1.jpg', category: cat_hamburguesas)
+Product.find_or_create_by!(name: 'Hamburguesa Double', price_dollars: '8', description: 'Clasica hamburguesa!', image_url: '/assets/burger_2.jpg', category: cat_hamburguesas)
+Product.find_or_create_by!(name: 'Hamburguesa Pollo Grill', price_dollars: '10', description: 'Clasica hamburguesa!', image_url: '/assets/burger_3.jpg', category: cat_hamburguesas)
+
+Product.find_or_create_by!(name: 'Coca-Cola', price_dollars: '2', description: 'Bebida de medio litro', image_url: '/assets/drink_1.jpg', category: cat_bebidas)
+Product.find_or_create_by!(name: 'Fanta', price_dollars: '2', description: 'Bebida de medio litro', image_url: '/assets/drink_2.jpg', category: cat_bebidas)
+Product.find_or_create_by!(name: 'Sprite', price_dollars: '2', description: 'Bebida de medio litro', image_url: '/assets/drink_3.jpg', category: cat_bebidas)

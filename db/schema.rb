@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_012045) do
+ActiveRecord::Schema.define(version: 2018_06_01_021555) do
 
   create_table "billing_details", force: :cascade do |t|
     t.integer "product_id"
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 2018_05_31_012045) do
     t.string "expiry_month"
     t.string "expiry_year"
     t.string "stripe_card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

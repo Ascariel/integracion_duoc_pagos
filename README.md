@@ -4,6 +4,7 @@
     - email
     - password
     - name
+    - phone
     - strip_customer_id
 
 * Card
@@ -16,6 +17,10 @@
     - expiry_month
     - status
 
+* Category
+    - name
+    - description
+
 * Product
     - description
     - name
@@ -27,11 +32,12 @@
     - total_price
     - user_id
     - purchase_date
-    - status
+    - payment_status
+    - status [failed, pending, paid, delivered]
     - order_code
 
 * BillingDetail
-    - user_id
+    - billing_id
     - product_id
     - total_price
     - unit_price
