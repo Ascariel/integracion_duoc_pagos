@@ -1,17 +1,16 @@
 
-	<!-- contendio home -->
-	<div class="container">
-		<div class="jumbotron main-header">
-			<div class="container">
-				<div class="logo-header"></div>
-				<%= image_tag 'logo.png', {class: 'logo-header'} %>
-			</div>
+<!-- contendio home -->
+<div class="container">
+	<div class="jumbotron main-header">
+		<div class="container">
+			<div class="logo-header"></div>
+			<%= image_tag 'logo.png', {class: 'logo-header'} %>
 		</div>
+	</div>
 
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 product-list-container">
 			<div class="table-responsive">
-
 				<table class="table">
 					<thead>
 						<tr class="food-title">
@@ -23,25 +22,31 @@
 						</tr>
 					</thead>
 					<% Category.all.each do |category| %>
-						<% category.products.first(3).each do |product| %>
-							<tbody>
-								<tr>
-									<th class="food" scope="row"><%= image_tag(product.image_url) %></th>
-									<td>
-										<p class="category-name">
-											<b><%= category.name %></b><br><%= product.description %></p>
-										</td>
-										<td>$ <%= product.price_dollars %></td>
-										<td><input type="text" class="form-control" placeholder=""></td>
-										<th>$</th>
-									</tr>
-								</tbody>
-							<% end %>
-						<% end %>
-					</table>
-				</div>
+					<% category.products.first(3).each do |product| %>
+					<tbody>
+						<tr>
+							<th class="food" scope="row"><%= image_tag(product.image_url) %></th>
+							<td>
+								<p class="category-name">
+									<b><%= category.name %></b><br><%= product.description %>
+								</p>
+							</td>
+							<td>$ <%= product.price_dollars %></td>
+							<td><input type="text" class="form-control" placeholder=""></td>
+							<th>$</th>
+						</tr>
+					</tbody>
+					<% end %>
+					<% end %>
+				</table>
 			</div>
-
+		</div>
+		<div class="col-md-4 offset-md-8 text-center">
+			<button type="button" class="btn btn-secondary btn-lg">Cancelar</button>
+			<button type="submit" class="btn btn-primary btn-lg btn-accept-order">Aceptar</button>
 		</div>
 	</div>
-	<br><br><br>
+
+</div>
+</div>
+<br><br><br>
