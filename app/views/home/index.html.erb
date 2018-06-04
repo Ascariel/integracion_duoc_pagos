@@ -1,5 +1,3 @@
-<main role="main">
-
 
 	<!-- contendio home -->
 	<div class="container">
@@ -10,58 +8,13 @@
 			</div>
 		</div>
 
-
-		<div class="row">
-<!-- 		<div class="col-md-3">
-			<div class=" left-side-info">
-
-			</div>
-		</div> -->
-
-		<!-- ============= INICIO PARTE PABLO ====== -->
-<!-- 		<div class="col-md-9">
-
-			<br>
-			<% Category.all.each do |category| %>
-			<div class="row">
-				<div class="col-md-12 food-title">
-					<p><%= category.name.upcase %></p>
-				</div>
-
-				<% category.products.first(3).each do |product| %>
-
-				<div class="col-md-4">
-					<div class="text-center food">
-						<%= image_tag(product.image_url) %>
-					</div>
-					<div class="form-group">
-						<label for="exampleFormControlSelect1">Cantidad</label>
-						<select class="form-control" id="exampleFormControlSelect1">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</div>
-				</div>
-				<% end %>
-				<div class="space"></div>
-			</div>
-			<% end %>
-		</div> -->
-		<!-- ============= FIN PARTE PABLO ====== -->
-
-
-		<!-- ============= INICIO PARTE ANDREA ====== -->
-	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="table-responsive">
-				
+
 				<table class="table">
 					<thead>
-						<tr class="food-title"> 
+						<tr class="food-title">
 							<th><h3>Producto</h3></th>
 							<th width="20%"><h3>Descripcion</h3></th>
 							<th width="20%"><h3>Precio</h3></th>
@@ -70,182 +23,25 @@
 						</tr>
 					</thead>
 					<% Category.all.each do |category| %>
-					<% category.products.first(3).each do |product| %>
-					<tbody>
-						<tr> 
-							<th class="food" scope="row"><%= image_tag(product.image_url) %></th>
-							<td>
-								<p class="category-name">
-									<b><%= category.name %></b><br><%= product.description %></p>
-								</td>
-								<td>$ <%= product.price_dollars %></td>
-								<td><input type="text" class="form-control" placeholder=""></td>
-								<th>$</th>
-							</tr> 
-						</tbody>
-						<% end %>
+						<% category.products.first(3).each do |product| %>
+							<tbody>
+								<tr>
+									<th class="food" scope="row"><%= image_tag(product.image_url) %></th>
+									<td>
+										<p class="category-name">
+											<b><%= category.name %></b><br><%= product.description %></p>
+										</td>
+										<td>$ <%= product.price_dollars %></td>
+										<td><input type="text" class="form-control" placeholder=""></td>
+										<th>$</th>
+									</tr>
+								</tbody>
+							<% end %>
 						<% end %>
 					</table>
-
 				</div>
-
 			</div>
 
-
-<!-- 				<div class="row">
-					<div class="col-md-12 food-title">
-						<p>PAPAS FRITAS</p>
-					</div>
-
-
-
-					<div class="col-md-4">
-						<div class="text-center food">
-							<%= image_tag("fries_2.jpg") %>
-							<%#= image_tag(Product.second.image_url) %>
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">Cantidad</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="text-center food">
-							<%#= image_tag(Product.third.image_url) %>
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">Cantidad</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</div>
-				</div>
-
-				<div class="space"></div>
-
-				<div class="row">
-					<div class="col-md-12 food-title">
-						<p>HAMBURGUESAS</p>
-					</div>
-
-					<div class="col-md-4">
-						<div class="text-center food">
-							<%#= image_tag(Product.fourth.image_url) %>
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">Cantidad</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="text-center food">
-							<%#= image_tag(Product.fifth.image_url) %>
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">Cantidad</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="text-center food">
-							<%#= image_tag(Product.first(6).last.image_url) %>
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">Cantidad</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</div>
-				</div>
-
-				<div class="space"></div>
-
-				<div class="row">
-					<div class="col-md-12 food-title">
-						<p>BEBIDAS</p>
-					</div>
-					<div class="col-md-4">
-						<div class="text-center food">
-							<%#= image_tag(Product.first(7).last.image_url) %>
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">Cantidad</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="text-center food">
-							<%#= image_tag(Product.first(8).last.image_url) %>
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">Cantidad</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="text-center food">
-							<%#= image_tag(Product.first(9).last.image_url) %>
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">Cantidad</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</div>
-				</div> -->
-				<!-- ============= FIN PARTE ANDREA ====== -->
-
-			</div>
 		</div>
-		<br><br><br>
-	</main>
+	</div>
+	<br><br><br>
