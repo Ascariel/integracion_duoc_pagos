@@ -23,18 +23,24 @@
 .food {
 	text-align: center;
 }
+
 .food img {
 	max-width: 35%;
 }
 
-.left-side-info {
-	border: solid 1px #000;
-	min-height: 800px;
-	margin: 20px 0 20px 20px;
+.product-list-container {
+	margin-bottom: 50px;
 }
 
 .category-name {
 	padding: 2px 0;
 }
+
+.btn-accept-order {
+	min-width: 200px;
+}
+
+
+
 
 
