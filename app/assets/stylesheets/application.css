@@ -3,13 +3,11 @@
 
 }
 .container {
-	margin-top: 50px;
-	/*border: solid 2px #ccc;
-	padding-top: 20px;*/
+	margin-top: 70px;
 }
 
 .main-header {
-	margin-top: 7%;
+	/*margin-top: 7%;*/
 	background: #fff url('fast-food-header.jpg') no-repeat center top;
 }
 
