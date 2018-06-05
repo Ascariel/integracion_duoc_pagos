@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   end
 
   def index
-    # flash[:success] = 'yey'
+    @categories = Category.all
   end
 
 end

@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
-  devise_for :users do
-    get 'sign_out' => 'sessions#destroy'
-  end
+    devise_for :users do
+      # get 'sign_out' => 'sessions#destroy'
+      # delete 'logout', to: 'sessions#destroy'
+      # get 'login', to: 'sessions#new'
+      # get 'signup' => 'registrations#new'
+    end
+
+    # Rails.application.routes.draw do
+    #   devise_for :users, controllers: {
+    #     sessions: 'users/sessions'
+    #   }
+    # end
 
   devise_scope :user do
     delete 'logout', to: 'devise/sessions#destroy'
-    get 'logout', to: 'devise/sessions#destroy'
     get 'login', to: 'devise/sessions#new'
+    get 'signup' => 'devise/registrations#new'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -18,5 +27,6 @@ Rails.application.routes.draw do
   get 'test_get_request' => 'pagos#test_get_request'
   get 'users/sign_out' => 'devise/sessions#destroy'
   get 'test_post_request' => 'pagos#test_post_request'
+
 
 end
