@@ -1,8 +1,11 @@
 
-.container-a {
-	margin-top: 5%;
-	border: solid 2px #ccc;
-	padding-top: 20px;
+.navbar {
+
+}
+.container {
+	margin-top: 50px;
+	/*border: solid 2px #ccc;
+	padding-top: 20px;*/
 }
 
 .main-header {
