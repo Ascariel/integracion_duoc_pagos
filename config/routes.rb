@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   get 'test_get_request' => 'pagos#test_get_request'
   get 'users/sign_out' => 'devise/sessions#destroy'
   get 'test_post_request' => 'pagos#test_post_request'
-
+  post 'billings/generate_payment' => 'billings#generate_payment'
 
 end

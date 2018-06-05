@@ -1,4 +1,6 @@
 class PagosController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def create_card
     email = params[:email] || 'pablocangas@gmail.com'
 
