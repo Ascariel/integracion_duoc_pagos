@@ -32,11 +32,25 @@ order_code: '#623648973204'
 billing = Billing.create!(params)
 
 
-params = {
+params2 = {
 user_id: user1.id,
 total_price: 30000,
 status: 'pagado',
 purchase_date: Time.current,
 order_code: '#87623746'
 }
-billing2 = Billing.create!(params)
+billing2 = Billing.create!(params2)
+
+
+datos = {
+  order_code: '#304957349573898',
+  nombre: 'Pablo Cangas',
+  email: 'pablocangas@gmail.com',
+  total: '30.000',
+  fecha: Date.today,
+  detalle: [
+    { producto: 'Papas XL', valor: '20.000' },
+    { producto: 'Fanta', valor: '5.000' },
+    { producto: 'Coca-Cola', valor: '5.000' }
+  ]
+}
