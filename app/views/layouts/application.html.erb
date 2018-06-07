@@ -26,6 +26,10 @@
 	</div>
 
 
+	<% if content_for?(:javascript) %>
+		<%= yield(:javascript) %>
+	<% end %>
+
 
 	<script type="text/javascript">
 		function show_alerts(){

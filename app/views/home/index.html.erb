@@ -14,11 +14,17 @@
 				<table class="table">
 					<thead>
 						<tr class="food-title">
-							<th><h3>Producto</h3></th>
+							<th width="20%"><h3>Producto</h3></th>
 							<th width="20%"><h3>Descripcion</h3></th>
-							<th width="20%"><h3>Precio</h3></th>
-							<th width="20%"><h3>Cantidad</h3></th>
-							<th width="20%"><h3>Total</h3></th>
+							<th width="10%"><h3>Precio</h3></th>
+
+							<% if current_user %>
+								<th width="10%"><h3>Cantidad</h3></th>
+								<th width="20%"><h3>Total</h3></th>
+							<% else %>
+								<th width="20%"><a href="/login" class="btn btn-info btn-block">Login para Comprar</a></th>
+							<% end %>
+
 						</tr>
 					</thead>
 					<% Category.all.each do |category| %>
@@ -32,17 +38,79 @@
 								</p>
 							</td>
 							<td>$ <%= product.price_dollars %></td>
-							<td><input type="text" class="form-control" placeholder=""></td>
-							<th>$</th>
+
+							<% if current_user %>
+								<td><input type="text" class="form-control" placeholder=""></td>
+								<td>$</td>
+							<% else %>
+								<td></td>
+								<td></td>
+							<% end %>
+
+
+
 						</tr>
 					</tbody>
 					<% end %>
 					<% end %>
 				</table>
 			</div>
+
+		</div>
+
+		<div class="col-md-8"></div>
+		<div class="col-md-4">
+			<% if current_user %>
+				<a href="" id="stripe_pay_button" class="btn btn-info btn-block">Pagar</a>
+			<% else %>
+				<a href="/login" id="" class="btn btn-info btn-block">Pagar</a>
+			<% end %>
+
 		</div>
 		<div class="col-md-4 offset-md-8 text-center">
 			<%= render partial: '/layouts/stripe_checkout_modal' %>
 		</div>
 	</div>
 </div>
+
+
+
+
+
+
+<% content_for :javascript do %>
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+	<script>
+
+		var handler = StripeCheckout.configure({
+		  key: "<%= Rails.application.secrets.stripe_public_key %>",
+		  image: "/assets/logo-xs.png",
+		  locale: 'auto',
+		  token: function(token) {
+		    // You can access the token ID with `token.id`.
+		    // Get the token ID to your server-side code for use.
+		  }
+		});
+
+		$("#stripe_pay_button").on('click', function(event) {
+			event.preventDefault();
+			/* Act on the event */
+		  handler.open({
+		    name: 'ComboSnacks',
+		    description: 'Seguro y Rapido',
+		    amount: 10000,
+		    currency: 'CLP',
+		    panelLabel: 'Pagar {{amount}}',
+		    allowRememberMe: false,
+		    email: "<%= current_user&.email %>"
+		  });
+		  event.preventDefault();
+		});
+
+		// Close Checkout on page navigation:
+		window.addEventListener('popstate', function() {
+		  handler.close();
+		});
+	</script>
+
+<% end %>

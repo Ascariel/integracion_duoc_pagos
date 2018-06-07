@@ -1,6 +1,6 @@
 class PagosController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
   def create_card
     email = params[:email] || 'pablocangas@gmail.com'
 
@@ -43,7 +43,7 @@ class PagosController < ApplicationController
   def test_post_request
     # params = { name: 'Usuario Test', email: 'test@test.com', amount: '100', items: ['Hamburguesa', 'Bebida XL']}
     params = { name: 'Usuario Test', email: 'test@test.com', amount: '100'}
-    r = RestClient.post 'https://97ee3e32.ngrok.io/Cliente/default.aspx/', params
+    r = RestClient.post 'https://6b627ca8.ngrok.io/Servicios/Mensajero.svc/enviarCorreo', params, {content_type: :json, accept: :json}
   end
 
   def receive_post_params
