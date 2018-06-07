@@ -1,42 +1,45 @@
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">ComboSnacks</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<a class="navbar-brand" href="/">ComboSnacks</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <!-- Left -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Productos</a>
-          </li>
-        </ul>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<!-- Left -->
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Productos</a>
+				</li>
+			</ul>
 
-        <!-- Right -->
-        <ul class="navbar-nav float-left">
-          <% if current_user.present? %>
-            <li class="nav-item">
-              <a class="nav-link" href="/"><%= current_user.email %></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-method="delete" href="/logout">Logout</a>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-          <% end %>
-        </ul>
+			<!-- Right -->
+			<ul class="navbar-nav float-left">
+				<% if current_user.present? %>
+				<li class="nav-item">
+					<a class="nav-link" href="/"><%= current_user.email %></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-method="delete" href="/logout">Logout</a>
+				</li>
+				<% else %>
+				<li class="nav-item">
+					<a class="nav-link" href="/login">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/signup">Singup</a>
+				</li>
+				<% end %>
+			</ul>
 
-      </div>
-    </nav>
+		</div>
+	</nav>
 
 
 
-    <div class="content">
-      <% flash.each do |key, value| %>
-        <div class="<%= flash_class(key) %>">
-          <%= value %>
-        </div>
-      <% end %>
-    </div>
+	<div class="content">
+		<% flash.each do |key, value| %>
+		<div class="<%= flash_class(key) %>">
+			<%= value %>
+		</div>
+		<% end %>
+	</div>
