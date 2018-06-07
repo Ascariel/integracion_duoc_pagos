@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   get 'users/sign_out' => 'devise/sessions#destroy'
   get 'test_post_request' => 'pagos#test_post_request'
   post 'billings/generate_payment' => 'billings#generate_payment'
+  get 'billings' => 'billings#index'
 
 end

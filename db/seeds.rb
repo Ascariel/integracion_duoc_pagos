@@ -18,3 +18,15 @@ Product.find_or_create_by!(name: 'Hamburguesa Pollo Grill', price_dollars: '10',
 Product.find_or_create_by!(name: 'Coca-Cola', price_dollars: '2', description: 'Bebida de medio litro', image_url: '/assets/drink_1.jpg', category: cat_bebidas)
 Product.find_or_create_by!(name: 'Fanta', price_dollars: '2', description: 'Bebida de medio litro', image_url: '/assets/drink_2.jpg', category: cat_bebidas)
 Product.find_or_create_by!(name: 'Sprite', price_dollars: '2', description: 'Bebida de medio litro', image_url: '/assets/drink_3.jpg', category: cat_bebidas)
+
+
+user1 = User.create!(name: "Andrea", email: 'algo@gmail.com', phone: '23432432', password: 'passpass')
+
+params = {
+user_id: user1.id,
+total_price: 20000,
+status: 'pagado',
+purchase_date: Time.current,
+order_code: '#623648973204'
+}
+a = Billing.create!(params)
