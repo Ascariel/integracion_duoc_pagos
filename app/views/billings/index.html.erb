@@ -8,12 +8,12 @@
 			<tr style="background-color: #e0e0e0;">
 				<td><b>Número Tarjeta</b></td>
 				<td><b>Tipo</b></td>
-				<td><b>Fecha</b></td>
+				<td><b>Fecha Expiracion</b></td>
 			</tr>
 			<tr>
-				<td>23234</td>
+				<td>42424242424242</td>
 				<td>Visa</td>
-				<td>06/06/2018</td>
+				<td>02/22</td>
 			</tr>
 		</tbody>
 	</table>
@@ -31,11 +31,11 @@
 				<th scope="col">Total</th>
 			</tr>
 		</thead>
-		<% Billing.all.each do |billing| %>
+		<% @billings.all.each do |billing| %>
 		<tbody>
 			<tr>
-				<th scope="row"><%= billing.order_code %></th> <!-- id -->
-				<td><%=  billing.status %></td> <!-- estado -->
+				<th scope="row">#<%= billing.order_code %></th> <!-- id -->
+				<td><%=  billing.status.upcase %></td> <!-- estado -->
 				<td><%=  billing.purchase_date.to_date %></td> <!-- fecha compra -->
 				<td>$ <%=  billing.total_price %></td> <!-- monto total -->
 			</tr>

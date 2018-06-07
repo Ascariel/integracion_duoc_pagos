@@ -35,7 +35,7 @@
 		function show_alerts(){
 			alert = "<%= params[:alert] %>"
 			if (alert == 'payment_successful') {
-				swal("Pago Exitoso", 'Su numero de orden es #876576465767', 'success')
+				swal("Pago Exitoso", 'Se le ha enviado un correo con los detalles de su compra', 'success')
 			}
 			if (alert == 'payment_failed') {
 				swal("Pago Fallido", 'Error al procesar su pago, intente nuevamente', 'warning')

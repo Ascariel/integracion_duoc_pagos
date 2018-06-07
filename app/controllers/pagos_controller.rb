@@ -14,7 +14,7 @@ class PagosController < ApplicationController
   end
 
   def charge_customer
-
+    return render json: {params}
   end
 
   def send_email_info
@@ -42,7 +42,7 @@ class PagosController < ApplicationController
 
   def test_post_request
     # params = { name: 'Usuario Test', email: 'test@test.com', amount: '100', items: ['Hamburguesa', 'Bebida XL']}
-    params = { name: 'Usuario Test', email: 'test@test.com', amount: '100'}
+    params = { name: 'Usuario Test', email: 'test@test.com', amount: '100' }
     r = RestClient.post 'https://6b627ca8.ngrok.io/Servicios/Mensajero.svc/enviarCorreo', params, {content_type: :json, accept: :json}
   end
 

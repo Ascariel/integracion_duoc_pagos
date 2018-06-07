@@ -16,6 +16,9 @@
 			<ul class="navbar-nav float-left">
 				<% if current_user.present? %>
 				<li class="nav-item">
+					<a class="nav-link" href="/billings">Historial Pagos</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="/"><%= current_user.email %></a>
 				</li>
 				<li class="nav-item">

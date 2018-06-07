@@ -27,31 +27,33 @@
 
 						</tr>
 					</thead>
+
 					<% Category.all.each do |category| %>
-					<% category.products.first(3).each do |product| %>
-					<tbody>
-						<tr>
-							<th class="food" scope="row"><%= image_tag(product.image_url) %></th>
-							<td>
-								<p class="category-name">
-									<b><%= category.name %></b><br><%= product.description %>
-								</p>
-							</td>
-							<td>$ <%= product.price_dollars %></td>
+						<% category.products.first(3).each do |product| %>
+							<tbody>
+								<tr>
+									<td class="food" scope="row"><%= image_tag(product.image_url) %></td>
+									<td>
+										<p class="category-name">
+											<b><%= category.name %></b><br><%= product.description %>
+										</p>
+									</td>
+									<td>$ <%= product.price_clp %></td>
 
-							<% if current_user %>
-								<td><input type="text" class="form-control" placeholder=""></td>
-								<td>$</td>
-							<% else %>
-								<td></td>
-								<td></td>
-							<% end %>
+									<!-- Mostrar Inputs solo si el usuario esta logueado -->
+									<% if current_user %>
+										<td>
+											<input type="number" id="product_id_<%= product.id %>" data-product-id="<%= product.id %>" class="product_pricing_input form-control" data-price="<%= product.price_clp %>" data-amount="0" placeholder="0">
+										</td>
+										<td id="total_product_price_id_<%= product.id %>">$0</td>
+									<% else %>
+										<td></td>
+										<td></td>
+									<% end %>
 
-
-
-						</tr>
-					</tbody>
-					<% end %>
+								</tr>
+							</tbody>
+						<% end %>
 					<% end %>
 				</table>
 			</div>
@@ -79,8 +81,49 @@
 
 
 <% content_for :javascript do %>
-	<script src="https://checkout.stripe.com/checkout.js"></script>
-	<script>
+<!-- 	<script src="https://checkout.stripe.com/checkout.js"></script> -->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		$(".product_pricing_input").on('keyup change blurr', function(event) {
+			event.preventDefault();
+			/* Act on the event */
+			var rows = $(".product_pricing_input")
+			var final_added_price = 0
+
+			$.each(rows, function(index, row){
+				var row = $(row)
+				var price = row.data('price')
+				var product_id = row.data("product-id")
+				var amount = parseInt(row.val())
+				amount = isNaN(amount) ? 0 : amount
+				var total_price = price * amount
+				var selector = "#total_product_price_id_"+ product_id
+
+				final_added_price = final_added_price + total_price
+				$(selector).text("$ " + total_price)
+				// console.log([price, amount, price*amount])
+			})
+			console.log(final_added_price)
+
+		});
+
+		function getTotalPrice(){
+			var rows = $(".product_pricing_input")
+			var final_added_price = 0
+
+			$.each(rows, function(index, row){
+				var row = $(row)
+				var price = row.data('price')
+				var amount = parseInt(row.val())
+				amount = isNaN(amount) ? 0 : amount
+				var total_price = price * amount
+
+				final_added_price = final_added_price + total_price
+			})
+			return final_added_price;
+		}
 
 		var handler = StripeCheckout.configure({
 		  key: "<%= Rails.application.secrets.stripe_public_key %>",
@@ -89,6 +132,22 @@
 		  token: function(token) {
 		    // You can access the token ID with `token.id`.
 		    // Get the token ID to your server-side code for use.
+		    amount = getTotalPrice()
+		    console.log(amount)
+		    $.ajax({
+		    	url: '/billings/charge_customer',
+		    	type: 'POST',
+		    	data: { stripe_token: token, amount: amount},
+		    })
+		    .done(function(r) {
+		    	console.log(r)
+		    	console.log("success");
+		    })
+		    .fail(function(r) {
+		    	console.log(r)
+		    	console.log("error");
+		    })
+
 		  }
 		});
 
@@ -98,7 +157,7 @@
 		  handler.open({
 		    name: 'ComboSnacks',
 		    description: 'Seguro y Rapido',
-		    amount: 10000,
+		    amount: getTotalPrice(),
 		    currency: 'CLP',
 		    panelLabel: 'Pagar {{amount}}',
 		    allowRememberMe: false,
@@ -111,6 +170,8 @@
 		window.addEventListener('popstate', function() {
 		  handler.close();
 		});
-	</script>
+
+		})
+		</script>
 
 <% end %>
