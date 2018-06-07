@@ -29,4 +29,14 @@ status: 'pagado',
 purchase_date: Time.current,
 order_code: '#623648973204'
 }
-a = Billing.create!(params)
+billing = Billing.create!(params)
+
+
+params = {
+user_id: user1.id,
+total_price: 30000,
+status: 'pagado',
+purchase_date: Time.current,
+order_code: '#87623746'
+}
+billing2 = Billing.create!(params)

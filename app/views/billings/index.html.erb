@@ -1,61 +1,45 @@
-<table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th scope="col">#</th>
-			<th scope="col">First</th>
-			<th scope="col">Last</th>
-			<th scope="col">Handle</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>Mark</td>
-			<td>Otto</td>
-			<td>@mdo</td>
-		</tr>
-		<tr>
-			<th scope="row">2</th>
-			<td>Jacob</td>
-			<td>Thornton</td>
-			<td>@fat</td>
-		</tr>
-		<tr>
-			<th scope="row">3</th>
-			<td>Larry</td>
-			<td>the Bird</td>
-			<td>@twitter</td>
-		</tr>
-	</tbody>
-</table>
+<!-- HISTORICO PEDIDOS -->
 
-<table class="table">
-	<thead class="thead-light">
-		<tr>
-			<th scope="col">#</th>
-			<th scope="col">First</th>
-			<th scope="col">Last</th>
-			<th scope="col">Handle</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>Mark</td>
-			<td>Otto</td>
-			<td>@mdo</td>
-		</tr>
-		<tr>
-			<th scope="row">2</th>
-			<td>Jacob</td>
-			<td>Thornton</td>
-			<td>@fat</td>
-		</tr>
-		<tr>
-			<th scope="row">3</th>
-			<td>Larry</td>
-			<td>the Bird</td>
-			<td>@twitter</td>
-		</tr>
-	</tbody>
-</table>
+<!-- datos tarjeta -->
+<div class="table-responsive" style="margin-bottom: 30px;">
+	<table class="table">
+		<h4>Tarjetas Asociadas</h4>
+		<tbody>
+			<tr style="background-color: #e0e0e0;">
+				<td><b>Número Tarjeta</b></td>
+				<td><b>Tipo</b></td>
+				<td><b>Fecha</b></td>
+			</tr>
+			<tr>
+				<td>23234</td>
+				<td>Visa</td>
+				<td>06/06/2018</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- detalle pedidos -->
+<div class="table-responsive">
+	<table class="table">
+		<h4>Datos Pedidos</h4>
+		<thead>
+			<tr style="background-color: #e0e0e0;">
+				<th scope="col">Número Orden</th>
+				<th scope="col">Estado</th>
+				<th scope="col">Fecha</th>
+				<th scope="col">Total</th>
+			</tr>
+		</thead>
+		<% Billing.all.each do |billing| %>
+		<tbody>
+			<tr>
+				<th scope="row"><%= billing.order_code %></th> <!-- id -->
+				<td><%=  billing.status %></td> <!-- estado -->
+				<td><%=  billing.purchase_date.to_date %></td> <!-- fecha compra -->
+				<td>$ <%=  billing.total_price %></td> <!-- monto total -->
+			</tr>
+		</tbody>
+		<% end %>
+	</table>
+</div>
