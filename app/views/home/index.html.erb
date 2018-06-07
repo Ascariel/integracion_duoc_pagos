@@ -154,10 +154,18 @@
 		$("#stripe_pay_button").on('click', function(event) {
 			event.preventDefault();
 			/* Act on the event */
+
+			total_price = getTotalPrice()
+
+			if (total_price == 0) {
+				swal("Atencion", "Debe elegir al menos 1 producto para poder pagar", "warning")
+				return false
+			}
+
 		  handler.open({
 		    name: 'ComboSnacks',
 		    description: 'Seguro y Rapido',
-		    amount: getTotalPrice(),
+		    amount: total_price,
 		    currency: 'CLP',
 		    panelLabel: 'Pagar {{amount}}',
 		    allowRememberMe: false,
