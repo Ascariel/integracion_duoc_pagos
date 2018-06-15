@@ -5,7 +5,7 @@
     - password
     - name
     - phone
-    - strip_customer_id
+    - stripe_customer_id
 
 * Card
     - user_id

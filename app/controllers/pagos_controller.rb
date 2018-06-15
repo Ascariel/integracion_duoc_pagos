@@ -72,6 +72,8 @@ class PagosController < ApplicationController
     }
     url = 'https://b7f8fab3.ngrok.io/servicios/Mensajero.svc/EnviarCorreo'
     r = RestClient.post(url, email_params)
+
+     r = RestClient.post(url, email_params, {content_type: :json, accept: :json})
     # r = RestClient.post 'https://6b627ca8.ngrok.io/servicios/Mensajero.svc/EnviarCorreo', email_params.to_json
     return render json: { r: r}
   end

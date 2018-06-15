@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
-    devise_for :users do
-      # get 'sign_out' => 'sessions#destroy'
-      # delete 'logout', to: 'sessions#destroy'
-      # get 'login', to: 'sessions#new'
-      # get 'signup' => 'registrations#new'
-    end
+    # devise_for :users do
+    #   get 'sign_out' => 'sessions#destroy'
+    #   delete 'logout', to: 'sessions#destroy'
+    #   get 'login', to: 'sessions#new'
+    #   get 'signup' => 'registrations#new'
+    # end
+
+    # devise_for :users do
+    #   get 'sign_out' => 'sessions#destroy'
+    #   delete 'logout', to: 'sessions#destroy'
+    #   get 'login', to: 'sessions#new'
+    #   get 'signup' => 'registrations#new'
+    # end, controllers: { registrations: 'users/registrations' }
+
+
 
     # Rails.application.routes.draw do
     #   devise_for :users, controllers: {
@@ -12,13 +21,19 @@ Rails.application.routes.draw do
     #   }
     # end
 
+
   devise_scope :user do
-    delete 'logout', to: 'devise/sessions#destroy'
-    get 'login', to: 'devise/sessions#new'
-    get 'signup' => 'devise/registrations#new'
-    post 'signup' => 'devise/registrations#create'
-    post 'login' => 'devise/sessions#create'
+    delete 'logout', to: 'users/sessions#destroy'
+    get 'login', to: 'users/sessions#new'
+    get 'signup' => 'users/registrations#new'
+    post 'signup' => 'users/registrations#create'
+    post 'login' => 'users/sessions#create'
   end
+
+
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "home#index"

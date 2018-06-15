@@ -71,25 +71,26 @@ class BillingsController < ApplicationController
       })
     end
 
-    formatted_details = format_billing_details(billing)
-    email_params = {
-      name: current_user.name,
-      email: current_user.email,
-      purchase_date: billing.purchase_date,
-      total_price: billing.total_price,
-      order_code: billing.order_code,
-      billing_details: formatted_details
-    }
+    # formatted_details = format_billing_details(billing)
+    # email_params = {
+    #   name: current_user.name,
+    #   email: current_user.email,
+    #   purchase_date: billing.purchase_date,
+    #   total_price: billing.total_price,
+    #   order_code: billing.order_code,
+    #   billing_details: formatted_details
+    # }
 
-    puts "\n\n ======= EMAIL PARAMS ARE: \n\n #{email_params}"
+    # puts "\n\n ======= EMAIL PARAMS ARE: \n\n #{email_params}"
 
     # Send POST REQUEST here
+    SendEmailJob.perform_later(billing.id)
     # url = 'https://b7f8fab3.ngrok.io/servicios/Mensajero.svc/EnviarCorreo'
-    # r = RestClient.post(url, email_params)
+    # response = RestClient.post(url, email_params.to_json, { content_type: :json, accept: :json })
     # puts "\n\n\ =======  RESPONSE: \n\n #{r.inspect}"
     # Send POST REQUEST here
-
-    render json: { details: email_params }
+    render json: { success: true }
+    # render json: { details: email_params, response: response }
     # redirect_to '/billings?alert=payment_successful'
   end
 
@@ -105,7 +106,6 @@ class BillingsController < ApplicationController
         product_total_price: billing_detail.total_price
       }
     end
-
   end
 
   def retrieve_stripe_customer(current_user, params)
