@@ -32,4 +32,6 @@ Rails.application.routes.draw do
   post 'billings/generate_payment' => 'billings#generate_payment'
   post 'billings/charge_customer' => 'billings#charge_customer'
   get 'billings' => 'billings#index'
+  get 'test' => 'home#test'
+  post 'test_captcha' => 'home#test_captcha'
 end

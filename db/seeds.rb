@@ -1,7 +1,5 @@
 
- # db:seed command (or created alongside the database with db:setup).
-
-
+ # db:seed command (or created alongside the database with db:setup)
 
 cat_papas = Category.find_or_create_by(name: 'Papas Fritas', description: '')
 cat_hamburguesas = Category.find_or_create_by(name: 'Hamburguesas', description: '')
@@ -45,7 +43,7 @@ billing2 = Billing.create!(params2)
 datos = {
   order_code: '#304957349573898',
   nombre: 'Pablo Cangas',
-  email: 'pablocangas@gmail.com',
+  email: 'pablocangas+1@gmail.com',
   total: '30.000',
   fecha: Date.today,
   detalle: [

@@ -41,9 +41,39 @@ class PagosController < ApplicationController
   # end
 
   def test_post_request
-    # params = { name: 'Usuario Test', email: 'test@test.com', amount: '100', items: ['Hamburguesa', 'Bebida XL']}
-    params = { name: 'Usuario Test', email: 'test@test.com', amount: '100' }
-    r = RestClient.post 'https://6b627ca8.ngrok.io/Servicios/Mensajero.svc/enviarCorreo', params, {content_type: :json, accept: :json}
+    # EMAIL PARAMS
+    email_params = {
+      name: 'Pablo Cangas',
+      email: 'pablocangas@gmail.com',
+      purchase_date: '13-06-2018',
+      total_price: 15000,
+      order_code: '#8798234986879',
+      billing_details: [
+        # Arreglo con la estructura de los detalles individuales
+        {
+          name: 'Hamburguesa X',
+          unit_price: 3000,
+          quantity: 3,
+          product_total_price: 9000
+        },
+        {
+          name: 'Fanta',
+          unit_price: 1000,
+          quantity: 3,
+          product_total_price: 3000
+        },
+        {
+          name: 'Papas Chicas',
+          unit_price: 1500,
+          quantity: 2,
+          product_total_price: 3000
+        }
+      ]
+    }
+    url = 'https://b7f8fab3.ngrok.io/servicios/Mensajero.svc/EnviarCorreo'
+    r = RestClient.post(url, email_params)
+    # r = RestClient.post 'https://6b627ca8.ngrok.io/servicios/Mensajero.svc/EnviarCorreo', email_params.to_json
+    return render json: { r: r}
   end
 
   def receive_post_params

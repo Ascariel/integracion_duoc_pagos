@@ -1,0 +1,41 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+
+<h1>Captcha Test Form</h1>
+
+<form method='POST' action="test_captcha">
+ <input type="text" name="something" value="Something">
+ <button type="submit"> Send</button>
+ <div class="g-recaptcha" data-sitekey="6Le0214UAAAAAJjlTiLEA0zKG2KODjcYXVMdMZsP"></div>
+</form>
+
+<!--
+<form method='POST' action="https://www.google.com/recaptcha/api/siteverify">
+ <input type="text" name="something" value="Something">
+ <button type="submit"> Send captcha verify</button>
+</form>
+ -->
+
+
+<!--
+  <head>
+    <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+    <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6Le0214UAAAAAJjlTiLEA0zKG2KODjcYXVMdMZsP'
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <form action="test_captcha" method="POST">
+      <div id="html_element"></div>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
+ -->

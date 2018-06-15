@@ -6,14 +6,18 @@
 		<h4>Tarjetas Asociadas</h4>
 		<tbody>
 			<tr style="background-color: #e0e0e0;">
-				<td><b>Número Tarjeta</b></td>
 				<td><b>Tipo</b></td>
+				<td><b>Estado</b></td>
 				<td><b>Fecha Expiracion</b></td>
+				<td><b>Ultimos 4 Digitos</b></td>
+				<td><b>Fecha Ingreso</b></td>
 			</tr>
 			<tr>
-				<td>42424242424242</td>
-				<td>Visa</td>
-				<td>02/22</td>
+				<td><%= @card&.brand %></td>
+				<td><%= 'Activa' if @card %></td>
+				<td><%= "#{@card&.expiry_month}/#{@card&.expiry_year}" %></td>
+				<td><%= @card&.last_4 %></td>
+				<td><%= @card&.created_at.to_date %></td>
 			</tr>
 		</tbody>
 	</table>
